@@ -14,12 +14,11 @@ public class BOJ1966 {
 			int m = Integer.parseInt(st.nextToken());
 			
 			Queue<Integer> q = new LinkedList<Integer>();
-			for(int j=0; j<n; j++) 
-			{
-				st = new StringTokenizer(br.readLine());
+			st = new StringTokenizer(br.readLine());
+			for(int j=0; j<n; j++) {
 				int num = Integer.parseInt(st.nextToken());
 				
-				if(j == m) num += n;
+				if(j == m) num += 10;
 				q.offer(num);
 			} // N, M 입력
 			
@@ -27,26 +26,27 @@ public class BOJ1966 {
 			while(!q.isEmpty()) 
 			{
 				int max = -1;
-				for(int j=0; j<n; j++) 
-				{
-					tmp = q.peek();
+				for(int j=0; j<n; j++) {
+					tmp = q.poll();
+					q.offer(tmp);
 					
-					if(tmp>=n && (tmp-n)<max) {
-						max = tmp-n;
-					} else if(max < tmp) max = tmp;
-				} //현재 큐에서 우선순위 max값 확인
+					if((max<10&&tmp>=10&&(tmp-10)>max) || (max>=10&&tmp<10&&(max-10)<tmp)
+							|| (tmp>max && max<10 && tmp<10)) max = tmp; 
+				}//현재 큐에서 우선순위 max값 확인
 				
 				while(true) {
 					tmp = q.poll();
 					
-					if(tmp==max || tmp-n==max) break;
+					if(tmp==max || tmp-10==max) break;
 					else q.offer(tmp);
 				} //우선순위 max값 poll
 				cnt++;
+				n--;
 				
-				if(tmp>=n) {
+				if(tmp>9) {
 					System.out.println(cnt);
-					return;
+					q.clear();
+					break;
 				}
 			} 
 		}
