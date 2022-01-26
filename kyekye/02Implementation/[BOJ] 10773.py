@@ -3,7 +3,7 @@ input = sys.stdin.readline
 
 nums = []
 
-for _ in (range(int(input()))):
+for _ in range(int(input())):
     num = int(input())
     if num == 0:
         nums.pop()
