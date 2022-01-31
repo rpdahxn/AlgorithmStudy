@@ -1,30 +1,22 @@
 import sys
 input = sys.stdin.readline
 
-case = int(input())
+cases = int(input())
 
-# 인덱스 정보를 유지할 것
-
-for _ in range(case):
-    n, m = map(int, input().split())  # 문서의 개수랑 찾는 문서의 위치
+for _ in range(cases):
+    n, idx = map(int, input().split())
+    files = list(map(int, input().split()))
+    check = [0 for _ in range(n)]
+    check[idx] = 1
     
-    file_list = list(map(int, input().split()))  # 문서들 중요도 입력받기
-    check_list = [0 for _ in range(n)]
-    check_list[m] = 1  # 내가 알고 싶은 문서 표시
-    
-    ans = 0
-    while True:
-        if file_list[0] == max(file_list):
-            ans += 1
-            
-            if check_list[0] != 1:
-                file_list.pop(0)
-                check_list.pop(0)
-            else:
-                print(ans)
+    count = 0
+    while files:
+        if max(files) == files[0]:
+            files.pop(0)
+            count += 1
+            if check.pop(0):
+                print(count)
                 break
         else:
-            file_list.append(file_list.pop(0))
-            check_list.append(check_list.pop(0))
-
-    
+            files.append(files.pop(0))
+            check.append(check.pop(0))
