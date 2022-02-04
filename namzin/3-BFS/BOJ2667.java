@@ -1,7 +1,5 @@
-package algorithm;
 import java.io.*;
 import java.util.*;
-
 
 public class BOJ2667 {
 	static int[][] map;
@@ -26,7 +24,7 @@ public class BOJ2667 {
 		List<Integer> rank = new LinkedList<>();
 		
 		for(int i=0; i<n; i++) 
-			for(int j=0, cnt=1; j<n; j++) 
+			for(int j=0, cnt=0; j<n; j++) 
 				if(map[i][j]==1 && !visited[i][j]) {
 					queue.add(new int[] {i, j});
 					
@@ -43,13 +41,13 @@ public class BOJ2667 {
 							queue.add(new int[] {toX, toY});
 							map[toX][toY] = map[x][y]+1;
 							visited[toX][toY] = true;
+							
+							cnt++;
 						}
-						
-						if(map[x][y] > cnt) cnt = map[x][y];
-					}
-					
+					}	
+					if(cnt==0) cnt++;
 					rank.add(cnt);
-					cnt = 1;
+					cnt=0;
 				}
 		
 		Collections.sort(rank);

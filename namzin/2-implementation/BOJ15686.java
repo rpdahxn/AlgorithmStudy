@@ -1,4 +1,4 @@
-package algorithm;
+
 import java.awt.*;
 import java.io.*;
 import java.util.*;
