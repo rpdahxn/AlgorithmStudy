@@ -25,7 +25,7 @@ public class BOJ7576 {
 		}
 		bfs(n, m);
 	}
-	// ¿Õ¿Ω(1), æ»¿Õ¿Ω(0), ∫Ûƒ≠(-1)
+
 	public static void bfs(int n, int m) {
 		int[] dx = {1, -1, 0, 0}, dy = {0, 0, 1, -1};
 		boolean[][] visited = new boolean[n][m];
