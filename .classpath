@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<classpath>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry kind="src" path="1-greedy/1w-nam-2201"/>
-	<classpathentry kind="src" path="2-implementation/2w-nam-2201"/>
-	<classpathentry kind="src" path="3-BFS/3w-nam-2202"/>
-	<classpathentry kind="src" path="4-DFS/4w-nam-2202"/>
-	<classpathentry kind="output" path="bin"/>
-</classpath>
