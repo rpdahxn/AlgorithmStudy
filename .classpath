@@ -7,6 +7,6 @@
 	</classpathentry>
 	<classpathentry kind="src" path="src/main/java"/>
 	<classpathentry kind="src" path="5-sorting/5w-nam"/>
-	<classpathentry kind="src" path="6-binary search/6w-nam"/>
+	<classpathentry kind="src" path="6-binary search/7w-nam"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>
