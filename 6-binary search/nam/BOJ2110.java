@@ -35,7 +35,7 @@ public class BOJ2110 {
  	static int Installable(int distance, int n) {
  		
  		int idx = map[0];
- 		int cnt = 1; 
+ 		int cnt = 1;
  		
  		for(int i=1; i<n; i++) {
  			if(map[i]-idx >= distance) {
