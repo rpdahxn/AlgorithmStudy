@@ -8,5 +8,6 @@
 	<classpathentry kind="src" path="src/main/java"/>
 	<classpathentry kind="src" path="5-sorting/5w-nam"/>
 	<classpathentry kind="src" path="6-binary search/nam"/>
+	<classpathentry kind="src" path="7-dynamic programming/nam"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>
